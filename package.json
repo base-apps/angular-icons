@@ -3,8 +3,7 @@
   "version": "0.0.4",
   "license": "MIT",
   "description": "A collection of icon libraries to use in your angular apps",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/base-apps/angular-icons"
@@ -20,7 +19,8 @@
     "url": "https://github.com/base-apps/angular-icons/issues"
   },
   "homepage": "https://github.com/base-apps/angular-icons",
-  "dependencies": {},
-  "devDependencies": {
-  }
+  "dependencies": {
+    "angular-svg-base": "0.0.5"
+  },
+  "devDependencies": {}
 }
