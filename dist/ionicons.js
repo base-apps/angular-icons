@@ -3,7 +3,7 @@
 
   angular.module('angularIcons.ionicons', [])
     .provider('Ionicons', Ionicons)
-    .directive('baIonicons', baIonicons)
+    .directive('baIonicon', baIonicon)
   ;
 
   function Ionicons() {
@@ -16,6 +16,11 @@
      */
     this.setAssetPath = function (path) {
       assetPath = angular.isString(path) ? path : assetPath;
+
+      // make sure ends with /
+      if (assetPath.charAt(assetPath.length - 1) !== '/') {
+        assetPath += '/';
+      }
     };
 
     /**
@@ -39,21 +44,25 @@
     };
   }
 
-  baIconic.$inject = ['Ionicons'];
+  baIonicon.$inject = ['Ionicons'];
 
-  function baIconic(Ionicons) {
+  function baIonicon(Ionicons) {
     var directive = {
-      restrict: 'A',
-      transclude: true,
+      restrict: 'EA',
       replace: true,
-      scope: {
+      templateUrl: function(element, attrs) {
+        return Ionicons.getAssetPath() + attrs.icon + ".svg";
       },
-      compile: compile
+      scope: {
+        icon: '@'
+      },
+      link: link
     };
 
     return directive;
 
-    function compile() {
+    function link(scope, element) {
+      element.addClass("ionicons");
     }
   }
 })();

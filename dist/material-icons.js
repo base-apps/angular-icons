@@ -3,7 +3,7 @@
 
   angular.module('angularIcons.materialIcons', [])
     .provider('MaterialIcons', MaterialIcons)
-    .directive('baMaterialIcons', baMaterialIcons)
+    .directive('baMaterialIcon', baMaterialIcon)
   ;
 
   function MaterialIcons() {
@@ -39,21 +39,25 @@
     };
   }
 
-  baMaterialIcons.$inject = ['MaterialIcons'];
+  baMaterialIcon.$inject = ['MaterialIcons'];
 
-  function baMaterialIcons(MaterialIcons) {
+  function baMaterialIcon(MaterialIcons) {
     var directive = {
-      restrict: 'A',
-      transclude: true,
+      restrict: 'EA',
       replace: true,
-      scope: {
+      templateUrl: function(element, attrs) {
+        return MaterialIcons.getAssetPath() + attrs.icon + ".svg";
       },
-      compile: compile
+      scope: {
+        icon: '@'
+      },
+      link: link
     };
 
     return directive;
 
-    function compile() {
+    function link(scope, element) {
+      element.addClass("material-icons");
     }
   }
 

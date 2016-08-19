@@ -1,10 +1,10 @@
 {
   "name": "angular-icons",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "description": "A collection of icon libraries to use in your angular apps",
   "scripts": {
-    "publish": "gulp && npm publish"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
