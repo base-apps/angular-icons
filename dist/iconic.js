@@ -4,7 +4,18 @@
   angular.module('angularIcons.iconic', [])
     .provider('Iconic', Iconic)
     .directive('baIconic', baIconic)
+    .config(config)
   ;
+
+  config.$inject = ['$sceDelegateProvider'];
+
+  function config($sceDelegateProvider) {
+    var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
+    $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
+      'https://npmcdn.com/angular-icons@1.0.0/dist/icons/iconic/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.0/icons/iconic/**'
+    ]));
+  }
 
   // iconic wrapper
   function Iconic() {
@@ -70,9 +81,9 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@0.1.3/dist/icons/iconic/';
+            return 'https://npmcdn.com/angular-icons@1.0.0/dist/icons/iconic/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/0.1.3/icons/iconic/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.0/icons/iconic/';
           default:
             return assetPath;
         }
