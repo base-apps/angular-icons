@@ -4,7 +4,18 @@
   angular.module('angularIcons.openIconic', [])
     .provider('OpenIconic', OpenIconic)
     .directive('baOpenIconic', baOpenIconic)
+    .config(config)
   ;
+
+  config.$inject = ['$sceDelegateProvider'];
+
+  function config($sceDelegateProvider) {
+    var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
+    $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
+      'https://npmcdn.com/angular-icons@0.0.0/dist/icons/open-iconic/**',
+      'https://cdn.jsdelivr.net/angular-icons/0.0.0/icons/open-iconic/**'
+    ]));
+  }
 
   function OpenIconic() {
     // default path

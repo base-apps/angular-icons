@@ -4,7 +4,18 @@
   angular.module('angularIcons.materialIcons', [])
     .provider('MaterialIcons', MaterialIcons)
     .directive('baMaterialIcon', baMaterialIcon)
+    .config(config)
   ;
+
+  config.$inject = ['$sceDelegateProvider'];
+
+  function config($sceDelegateProvider) {
+    var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
+    $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
+      'https://npmcdn.com/angular-icons@0.0.0/dist/icons/material-icons/**',
+      'https://cdn.jsdelivr.net/angular-icons/0.0.0/icons/material-icons/**'
+    ]));
+  }
 
   function MaterialIcons() {
     // default path
