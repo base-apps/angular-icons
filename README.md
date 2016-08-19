@@ -38,7 +38,14 @@ angular.module('...').config(function(IconicProvider) {
 
 ### ba-iconic (Directive)
 
-A directive used to load an icon from Iconic.
+A directive used to load an icon from Iconic.  The directive has the following supported attributes:
+- `icon-dir`: changes the directory for the icons (default specified by Iconic service)
+- `src`: full path to the icon (including svg extension)
+- `size`: use the values **small**, **medium**, or **large** to size the icon (by default all iconic icons are responsive and will fill to fit their entire container)
+- `dyn-icon`: use this attribute to define the name of the icon using an [expression](https://docs.angularjs.org/guide/expression)
+- `dyn-icon-attrs`: use this attribute to define the icon attributes using an object
+
+Each icon from iconic may also provide a set of attributes to further customize the icon.  For instance the `data-direction` attribute can be used for the `chevron` icon to specify the [direction of the chevron](https://useiconic.com/icons/chevron).
 
 ## angularIcons.ionicons (Module)
 
