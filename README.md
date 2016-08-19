@@ -38,7 +38,7 @@ angular.module('...').config(function(IconicProvider) {
 
 ### ba-iconic (Directive)
 
-A directive use to load an icon from Iconic.
+A directive used to load an icon from Iconic.
 
 ## angularIcons.ionicons (Module)
 
@@ -53,7 +53,7 @@ angular.module('...').config(function(IoniconProvider) {
 
 ### ba-ionicon (Directive)
 
-A directive use to load an icon from Ionicon.
+A directive used to load an icon from Ionicon.
 
 ## angularIcons.materialIcons (Module)
 
@@ -68,4 +68,4 @@ angular.module('...').config(function(MaterialIcon) {
 
 ### ba-material-icon (Directive)
 
-A directive use to load an icon from Material Icons.
+A directive used to load an icon from Material Icons.
