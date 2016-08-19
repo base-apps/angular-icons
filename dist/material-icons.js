@@ -8,7 +8,8 @@
 
   function MaterialIcons() {
     // default path
-    var assetPath = 'https://cdn.jsdelivr.net/angular-icons/0.1.2/icons/material-icons/';
+    var assetPath = '';
+    var assetCdn = 'npmcdn';
 
     /**
      * Sets the path used to locate the iconic SVG files
@@ -20,6 +21,20 @@
       // make sure ends with /
       if (assetPath.charAt(assetPath.length - 1) !== '/') {
         assetPath += '/';
+      }
+    };
+
+    /**
+     * Configures which CDN to use
+     * @param {string} cdn - options are 'jsdelivr', 'npmcdn' (default 'npmcdn')
+     */
+    this.setCdn = function (cdn) {
+      switch (cdn) {
+        case 'jsdelivr':
+        case 'npmcdn':
+          assetCdn = cdn;
+        default:
+          assetCdn = 'npmcdn';
       }
     };
 
@@ -39,7 +54,14 @@
        * @returns {string}
        */
       function getAssetPath() {
-        return assetPath;
+        switch (assetCdn) {
+          case 'npmcdn':
+            return 'https://npmcdn.com/angular-icons@0.1.3/dist/icons/material-icons/';
+          case 'jsdelivr':
+            return 'https://cdn.jsdelivr.net/angular-icons/0.1.3/icons/material-icons/';
+          default:
+            return assetPath;
+        }
       }
     };
   }
