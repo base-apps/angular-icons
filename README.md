@@ -51,10 +51,10 @@ Each icon from iconic may also provide a set of attributes to further customize 
 
 ### Ionicons (Service)
 
-You can use the IoniconProvider to configure the default path to the ionicons assets:
+You can use the IoniconsProvider to configure the default path to the ionicons assets:
 ```javascript
-angular.module('...').config(function(IoniconProvider) {
-   IoniconProvider.setAssetPath("...");
+angular.module('...').config(function(IoniconsProvider) {
+   IoniconsProvider.setAssetPath("...");
 });
 ```
 
@@ -64,12 +64,12 @@ A directive used to load an icon from Ionicon.
 
 ## angularIcons.materialIcons (Module)
 
-### MaterialIcon (Service)
+### MaterialIcons (Service)
 
-You can use the MaterialIcon to configure the default path to the material icons assets:
+You can use the MaterialIconsProvider to configure the default path to the material icons assets:
 ```javascript
-angular.module('...').config(function(MaterialIcon) {
-   MaterialIcon.setAssetPath("...");
+angular.module('...').config(function(MaterialIconsProvider) {
+   MaterialIconsProvider.setAssetPath("...");
 });
 ```
 
