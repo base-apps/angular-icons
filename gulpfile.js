@@ -38,6 +38,9 @@ gulp.task('default', ['clean'], function() {
   merged.add(gulp.src('./icons/iconic/*.svg')
     .pipe(gulp.dest('./dist/icons/iconic')));
 
+  merged.add(gulp.src('./node_modules/open-iconic/svg/*.svg')
+    .pipe(gulp.dest('./dist/icons/open-iconic')));
+
   merged.add(gulp.src('./node_modules/ionicons/dist/svg/*.svg')
     .pipe(gulp.dest('./dist/icons/ionicons')));
 
@@ -52,7 +55,8 @@ gulp.task('default', ['clean'], function() {
   merged.add(gulp.src([
       './iconic.js',
       './ionicons.js',
-      './material-icons.js'
+      './material-icons.js',
+      './open-iconic.js'
     ])
     .pipe(gulp.dest('./dist')));
 
