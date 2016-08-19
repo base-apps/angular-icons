@@ -16,7 +16,7 @@ Each of the directives as an **icon** attribute which can be used to easily load
 - `<ba-iconic icon="thumb"></ba-iconic>`
   - Full list of supported icons can be found [here](https://github.com/base-apps/angular-icons/tree/master/dist/icons/iconic)
   - Check the [Iconic website](https://useiconic.com/icons) for examples
-- `<ba-ionicon icon="thumbsup"></ba-ionicon>`
+- `<ba-ionicon icon="ios-thumbs-up"></ba-ionicon>`
   - Full list of supported icons can be found [here](https://github.com/base-apps/angular-icons/tree/master/dist/icons/ionicons)
   - Check the [Ionicons website](http://ionicons.com/) for examples
 - `<ba-material-icon icon="thumb-up"></ba-material-icon>`
