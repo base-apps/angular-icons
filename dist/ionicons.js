@@ -4,7 +4,18 @@
   angular.module('angularIcons.ionicons', [])
     .provider('Ionicons', Ionicons)
     .directive('baIonicon', baIonicon)
+    .config(config)
   ;
+
+  config.$inject = ['$sceDelegateProvider'];
+
+  function config($sceDelegateProvider) {
+    var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
+    $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
+      'https://npmcdn.com/angular-icons@1.0.0/dist/icons/ionicons/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.0/icons/ionicons/**'
+    ]));
+  }
 
   function Ionicons() {
     // default path
@@ -56,9 +67,9 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@0.1.3/dist/icons/ionicons/';
+            return 'https://npmcdn.com/angular-icons@1.0.0/dist/icons/ionicons/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/0.1.3/icons/ionicons/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.0/icons/ionicons/';
           default:
             return assetPath;
         }
