@@ -8,7 +8,7 @@
 
   function OpenIconic() {
     // default path
-    var assetPath = 'assets/img/open-iconic/';
+    var assetPath = 'https://cdn.jsdelivr.net/angular-icons/0.0.0/icons/open-iconic/';
 
     /**
      * Sets the path used to locate the iconic SVG files

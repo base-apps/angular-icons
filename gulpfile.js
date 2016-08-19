@@ -15,13 +15,23 @@ var ICON_CATEGORIES = [
   'notification',
   'places',
   'social',
-  'toggle',
+  'toggle'
 ];
 
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
+    args = require('yargs').argv,
+    runSequence = require('run-sequence'),
     merge = require('merge-stream'),
     del = require('del');
+
+var nextVersion = "";
+var jsFiles = [
+  './iconic.js',
+  './ionicons.js',
+  './material-icons.js',
+  './open-iconic.js'
+];
 
 gulp.task('clean', function () {
   return del([
@@ -29,7 +39,30 @@ gulp.task('clean', function () {
   ]);
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('setversion', function () {
+  return gulp.src('./package.json')
+    .pipe($.bump({type: args.publish || 'patch'}))
+    .pipe($.tap(function(file){
+      var json = JSON.parse(String(file.contents));
+      nextVersion = json.version;
+    }));
+});
+
+gulp.task('saveversion', function () {
+  return gulp.src('./package.json')
+    .pipe($.bump({type: args.publish || 'patch'}))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('tagversion', ['saveversion'], function () {
+  return gulp.src(['./package.json', './dist/**/*'])
+    .pipe($.git.add())
+    .pipe($.git.commit('publish version ' + nextVersion))
+    .pipe($.filter('package.json'))
+    .pipe($.tagVersion());
+});
+
+gulp.task('build', ['clean', 'setversion'], function() {
   var merged = merge();
 
   merged.add(gulp.src('./lib/*.js')
@@ -52,13 +85,17 @@ gulp.task('default', ['clean'], function() {
       .pipe(gulp.dest('./dist/icons/material-icons')));
   });
 
-  merged.add(gulp.src([
-      './iconic.js',
-      './ionicons.js',
-      './material-icons.js',
-      './open-iconic.js'
-    ])
+  merged.add(gulp.src(jsFiles)
+    .pipe($.replace(/https:\/\/cdn\.jsdelivr\.net\/angular-icons\/0\.0\.0/g, 'https://cdn.jsdelivr.net/angular-icons/' + nextVersion))
     .pipe(gulp.dest('./dist')));
 
   return merged;
+});
+
+gulp.task('default', ['build'], function(cb) {
+  if (args.publish) {
+    return runSequence('tagversion', cb);
+  } else {
+    cb();
+  }
 });
