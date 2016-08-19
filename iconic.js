@@ -17,6 +17,11 @@
      */
     this.setAssetPath = function (path) {
       assetPath = angular.isString(path) ? path : assetPath;
+
+      // make sure ends with /
+      if (assetPath.charAt(assetPath.length - 1) !== '/') {
+        assetPath += '/';
+      }
     };
 
     /**
@@ -55,7 +60,7 @@
 
   function baIconic(iconic, $compile, $window) {
     var directive = {
-      restrict: 'A',
+      restrict: 'EA',
       template: '<img ng-transclude>',
       transclude: true,
       replace: true,
