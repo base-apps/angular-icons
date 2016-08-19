@@ -44,8 +44,10 @@
         case 'jsdelivr':
         case 'npmcdn':
           assetCdn = cdn;
+          break;
         default:
           assetCdn = 'npmcdn';
+          break;
       }
     };
 
