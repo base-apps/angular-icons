@@ -4,7 +4,18 @@
   angular.module('angularIcons.iconic', [])
     .provider('Iconic', Iconic)
     .directive('baIconic', baIconic)
+    .config(config)
   ;
+
+  config.$inject = ['$sceDelegateProvider'];
+
+  function config($sceDelegateProvider) {
+    var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
+    $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
+      'https://npmcdn.com/angular-icons@0.0.0/dist/icons/iconic/**',
+      'https://cdn.jsdelivr.net/angular-icons/0.0.0/icons/iconic/**'
+    ]));
+  }
 
   // iconic wrapper
   function Iconic() {

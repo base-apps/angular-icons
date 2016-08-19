@@ -4,7 +4,18 @@
   angular.module('angularIcons.ionicons', [])
     .provider('Ionicons', Ionicons)
     .directive('baIonicon', baIonicon)
+    .config(config)
   ;
+
+  config.$inject = ['$sceDelegateProvider'];
+
+  function config($sceDelegateProvider) {
+    var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
+    $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
+      'https://npmcdn.com/angular-icons@0.0.0/dist/icons/ionicons/**',
+      'https://cdn.jsdelivr.net/angular-icons/0.0.0/icons/ionicons/**'
+    ]));
+  }
 
   function Ionicons() {
     // default path
