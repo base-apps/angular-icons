@@ -16,6 +16,11 @@
      */
     this.setAssetPath = function (path) {
       assetPath = angular.isString(path) ? path : assetPath;
+
+      // make sure ends with /
+      if (assetPath.charAt(assetPath.length - 1) !== '/') {
+        assetPath += '/';
+      }
     };
 
     /**
