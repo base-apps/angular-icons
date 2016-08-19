@@ -1,38 +1,71 @@
 # angular-icons
 A collection of icon libraries to use in your angular apps
 
+## Usage
+The following icon libraries are supported by Angular Icons:
+- Iconic
+- Ionicons
+- Material Icons
+
+You can include an icon from one of the above libraries by using the provided directives:
+- `ba-iconic`
+- `ba-ionicon`
+- `ba-material-icon`
+
+Each of the directives as an **icon** attribute which can be used to easily load an icon:
+- `<ba-iconic icon="thumb"></ba-iconic>`
+  - Full list of supported icons can be found [here](https://github.com/base-apps/angular-icons/tree/master/dist/icons/iconic)
+  - Check the [Iconic website](https://useiconic.com/icons) for examples
+- `<ba-ionicon icon="thumb"></ba-ionicon>`
+  - Full list of supported icons can be found [here](https://github.com/base-apps/angular-icons/tree/master/dist/icons/ionicons)
+  - Check the [Ionicons website](http://ionicons.com/) for examples
+- `<ba-material-icon icon="thumb"></ba-material-icon>`
+  - Full list of supported icons can be found [here](https://github.com/base-apps/angular-icons/tree/master/dist/icons/material-icons)
+  - Check the [Material Icons website](https://design.google.com/icons/) for examples
+
+Styling of the icons is provided as part of [Angular Base Apps](https://base-apps.github.io/angular-base-apps/#!/icon).
+
 ## angularIcons.iconic (Module)
-
-We partnered with the folks at [Iconic](http://useiconic.com) to include a sample of 24 icons from their responsive icon set. Angular Base Apps includes the Iconic JavaScript library, which we wrapped in an Angular module.</p>
-
-### ba-iconic (Directive)
-
-A wrapper for the Iconic data attributes, which allows you to specify the name of an icon insteead of the entire file path.
-
-```html
-<img ba-iconic icon="thumb" size="medium">
-```
 
 ### Iconic (Service)
 
-A wrapper for the `IconicJS` object the Iconic JavaScript places on the `window` object. Learn more about how the Iconic JavaScript works [here](https://useiconic.com/tools/iconic-js/).
+You can use the IconicProvider to configure the default path to the iconic assets:
+```javascript
+angular.module('...').config(function(IconicProvider) {
+   IconicProvider.setAssetPath("...");
+});
+```
+
+### ba-iconic (Directive)
+
+A directive use to load an icon from Iconic.
 
 ## angularIcons.ionicons (Module)
 
-### ba-ionicon (Directive)
+### Ionicons (Service)
 
-```html
-<ba-ionicon icon="ios-alarm" />
+You can use the IoniconProvider to configure the default path to the ionicons assets:
+```javascript
+angular.module('...').config(function(IoniconProvider) {
+   IoniconProvider.setAssetPath("...");
+});
 ```
 
-### Ionicons (Service)
+### ba-ionicon (Directive)
+
+A directive use to load an icon from Ionicon.
 
 ## angularIcons.materialIcons (Module)
 
-### ba-material-icon (Directive)
+### MaterialIcon (Service)
 
-```html
-<ba-material-icon icon="add-location" />
+You can use the MaterialIcon to configure the default path to the material icons assets:
+```javascript
+angular.module('...').config(function(MaterialIcon) {
+   MaterialIcon.setAssetPath("...");
+});
 ```
 
-### MaterialIcons (Service)
+### ba-material-icon (Directive)
+
+A directive use to load an icon from Material Icons.
