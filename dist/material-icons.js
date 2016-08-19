@@ -8,7 +8,7 @@
 
   function MaterialIcons() {
     // default path
-    var assetPath = 'assets/img/material-icons/';
+    var assetPath = 'https://cdn.jsdelivr.net/angular-icons/0.1.2/icons/material-icons/';
 
     /**
      * Sets the path used to locate the iconic SVG files

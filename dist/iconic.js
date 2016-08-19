@@ -9,7 +9,7 @@
   // iconic wrapper
   function Iconic() {
     // default path
-    var assetPath = 'assets/img/iconic/';
+    var assetPath = 'https://cdn.jsdelivr.net/angular-icons/0.1.2/icons/iconic/';
 
     /**
      * Sets the path used to locate the iconic SVG files

@@ -8,7 +8,7 @@
 
   function Ionicons() {
     // default path
-    var assetPath = 'assets/img/ionicons/';
+    var assetPath = 'https://cdn.jsdelivr.net/angular-icons/0.1.2/icons/ionicons/';
 
     /**
      * Sets the path used to locate the iconic SVG files
