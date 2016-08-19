@@ -20,7 +20,15 @@
   },
   "homepage": "https://github.com/base-apps/angular-icons",
   "dependencies": {
-    "angular-svg-base": "0.0.5"
+    "angular-svg-base": "0.0.5",
+    "ionicons": "^3.0.0",
+    "material-design-icons": "^2.2.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "merge-stream": "^1.0.0"
+  }
 }

@@ -51,9 +51,9 @@
     };
   }
 
-  baIconic.$inject = ['Iconic', 'BaseAppsApi', '$compile'];
+  baIconic.$inject = ['Iconic', '$compile', '$window'];
 
-  function baIconic(iconic, BaseAppsApi, $compile) {
+  function baIconic(iconic, $compile, $window) {
     var directive = {
       restrict: 'A',
       template: '<img ng-transclude>',
@@ -148,10 +148,10 @@
         injectSvg(element[0]);
 
         // subscribe for resize events
-        BaseAppsApi.subscribe('resize', resize);
+        angular.element($window).on('resize', resize);
 
         scope.$on("$destroy", function() {
-          BaseAppsApi.unsubscribe('resize', resize);
+          angular.element($window).off('resize', resize);
         });
 
         // handle dynamic updating of src
