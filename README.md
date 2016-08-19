@@ -34,12 +34,11 @@ Styling of the icons is provided as part of [Angular Base Apps](https://base-app
 
 ### Iconic (Service)
 
-You can use the IconicProvider to configure the default path to the iconic assets:
-```javascript
-angular.module('...').config(function(IconicProvider) {
-   IconicProvider.setAssetPath("...");
-});
-```
+You can use the IconicProvider to configure the default path to the iconic assets.  The following methods exist:
+  - `setAssetPath(path)` - sets the full path to the icons
+    - useful if hosting the icons locally or if using a non-supported CDN
+  - `setCdn(cdn)` - sets the CDN to use for the icons
+    - the icons are hosted on the following CDNs: npmcdn (default), jsdelivr
 
 ### ba-iconic (Directive)
 
@@ -56,12 +55,11 @@ Each icon from iconic may also provide a set of attributes to further customize 
 
 ### OpenIconic (Service)
 
-You can use the OpenIconicProvider to configure the default path to the open iconic assets:
-```javascript
-angular.module('...').config(function(OpenIconicProvider) {
-   OpenIconicProvider.setAssetPath("...");
-});
-```
+You can use the OpenIconicProvider to configure the default path to the open iconic assets.  The following methods exist:
+  - `setAssetPath(path)` - sets the full path to the icons
+    - useful if hosting the icons locally or if using a non-supported CDN
+  - `setCdn(cdn)` - sets the CDN to use for the icons
+    - the icons are hosted on the following CDNs: npmcdn (default), jsdelivr
 
 ### ba-open-iconic (Directive)
 
@@ -71,12 +69,11 @@ A directive used to load an icon from Open Iconic.
 
 ### Ionicons (Service)
 
-You can use the IoniconsProvider to configure the default path to the ionicons assets:
-```javascript
-angular.module('...').config(function(IoniconsProvider) {
-   IoniconsProvider.setAssetPath("...");
-});
-```
+You can use the IoniconsProvider to configure the default path to the ionicons assets.  The following methods exist:
+  - `setAssetPath(path)` - sets the full path to the icons
+    - useful if hosting the icons locally or if using a non-supported CDN
+  - `setCdn(cdn)` - sets the CDN to use for the icons
+    - the icons are hosted on the following CDNs: npmcdn (default), jsdelivr
 
 ### ba-ionicon (Directive)
 
@@ -86,12 +83,11 @@ A directive used to load an icon from Ionicon.
 
 ### MaterialIcons (Service)
 
-You can use the MaterialIconsProvider to configure the default path to the material icons assets:
-```javascript
-angular.module('...').config(function(MaterialIconsProvider) {
-   MaterialIconsProvider.setAssetPath("...");
-});
-```
+You can use the MaterialIconsProvider to configure the default path to the material icons assets.  The following methods exist:
+  - `setAssetPath(path)` - sets the full path to the icons
+    - useful if hosting the icons locally or if using a non-supported CDN
+  - `setCdn(cdn)` - sets the CDN to use for the icons
+    - the icons are hosted on the following CDNs: npmcdn (default), jsdelivr
 
 ### ba-material-icon (Directive)
 
