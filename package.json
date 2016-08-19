@@ -5,9 +5,9 @@
   "description": "A collection of icon libraries to use in your angular apps",
   "scripts": {
     "build": "gulp",
-    "publish-patch": "gulp --publish patch",
-    "publish-minor": "gulp --publish minor",
-    "publish-major": "gulp --publish major"
+    "publish-patch": "gulp --publish patch && git push --follow-tags && npm publish",
+    "publish-minor": "gulp --publish minor && git push --follow-tags && npm publish",
+    "publish-major": "gulp --publish major && git push --follow-tags && npm publish"
   },
   "repository": {
     "type": "git",
