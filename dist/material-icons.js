@@ -12,8 +12,8 @@
   function config($sceDelegateProvider) {
     var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
     $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
-      'https://npmcdn.com/angular-icons@1.0.1/dist/icons/material-icons/**',
-      'https://cdn.jsdelivr.net/angular-icons/1.0.1/icons/material-icons/**'
+      'https://npmcdn.com/angular-icons@1.0.2/dist/icons/material-icons/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.2/icons/material-icons/**'
     ]));
   }
 
@@ -69,9 +69,9 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@1.0.1/dist/icons/material-icons/';
+            return 'https://npmcdn.com/angular-icons@1.0.2/dist/icons/material-icons/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/1.0.1/icons/material-icons/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.2/icons/material-icons/';
           default:
             return assetPath;
         }
