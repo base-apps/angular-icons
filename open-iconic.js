@@ -86,7 +86,7 @@
       restrict: 'EA',
       replace: true,
       templateUrl: function(element, attrs) {
-        return MaterialIcons.getAssetPath() + attrs.icon + ".svg";
+        return OpenIconic.getAssetPath() + attrs.icon + ".svg";
       },
       scope: {
         icon: '@'
