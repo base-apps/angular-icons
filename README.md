@@ -14,7 +14,7 @@ You can include an icon from one of the above libraries by using the provided di
 - `ba-ionicon`
 - `ba-material-icon`
 
-Each of the directives as an **icon** attribute which can be used to easily load an icon:
+Each of the directives has an **icon** attribute which can be used to easily load an icon:
 - `<ba-iconic icon="thumb"></ba-iconic>`
   - Full list of supported icons can be found [here](https://github.com/base-apps/angular-icons/tree/master/dist/icons/iconic)
   - Check the [Iconic website](https://useiconic.com/icons) for examples
