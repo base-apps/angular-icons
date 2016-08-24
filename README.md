@@ -1,6 +1,8 @@
 # angular-icons
 A collection of icon libraries to use in your angular apps
 
+[![GitHub version](https://badge.fury.io/gh/base-apps%2Fangular-icons.svg)](https://badge.fury.io/gh/base-apps%2Fangular-icons)
+
 ## Usage
 The following icon libraries are supported by Angular Icons:
 - Iconic
