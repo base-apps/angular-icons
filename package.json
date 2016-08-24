@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/base-apps/angular-icons",
   "dependencies": {
-    "angular-svg-base": "^0.0.5",
     "ionicons": "^3.0.0",
     "material-design-icons": "^2.2.3",
     "open-iconic": "^1.1.1"
