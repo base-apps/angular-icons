@@ -26,12 +26,6 @@ var gulp = require('gulp'),
     del = require('del');
 
 var nextVersion = "";
-var jsFiles = [
-  './iconic.js',
-  './ionicons.js',
-  './material-icons.js',
-  './open-iconic.js'
-];
 
 gulp.task('clean', function () {
   return del([
@@ -85,7 +79,7 @@ gulp.task('build', ['clean', 'setversion'], function() {
       .pipe(gulp.dest('./dist/icons/material-icons')));
   });
 
-  merged.add(gulp.src(jsFiles)
+  merged.add(gulp.src('./src/**/*.js')
     // update CDNs
     .pipe($.replace(/https:\/\/cdn\.jsdelivr\.net\/angular-icons\/0\.0\.0/g, 'https://cdn.jsdelivr.net/angular-icons/' + nextVersion))
     .pipe($.replace(/https:\/\/npmcdn\.com\/angular-icons@0\.0\.0/g, 'https://npmcdn.com/angular-icons@' + nextVersion))
