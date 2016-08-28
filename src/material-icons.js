@@ -20,7 +20,7 @@
   function MaterialIcons() {
     // default path
     var assetPath = '';
-    var assetCdn = 'npmcdn';
+    var assetCdn = 'jsdelivr';
 
     /**
      * Sets the path used to locate the iconic SVG files
