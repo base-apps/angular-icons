@@ -12,8 +12,8 @@
   function config($sceDelegateProvider) {
     var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
     $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
-      'https://npmcdn.com/angular-icons@1.0.3/dist/icons/ionicons/**',
-      'https://cdn.jsdelivr.net/angular-icons/1.0.3/icons/ionicons/**'
+      'https://npmcdn.com/angular-icons@1.0.4/dist/icons/ionicons/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.4/icons/ionicons/**'
     ]));
   }
 
@@ -69,9 +69,9 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@1.0.3/dist/icons/ionicons/';
+            return 'https://npmcdn.com/angular-icons@1.0.4/dist/icons/ionicons/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/1.0.3/icons/ionicons/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.4/icons/ionicons/';
           default:
             return assetPath;
         }
