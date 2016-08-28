@@ -12,15 +12,15 @@
   function config($sceDelegateProvider) {
     var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
     $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
-      'https://npmcdn.com/angular-icons@1.0.4/dist/icons/material-icons/**',
-      'https://cdn.jsdelivr.net/angular-icons/1.0.4/icons/material-icons/**'
+      'https://npmcdn.com/angular-icons@1.0.5/dist/icons/material-icons/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.5/icons/material-icons/**'
     ]));
   }
 
   function MaterialIcons() {
     // default path
     var assetPath = '';
-    var assetCdn = 'npmcdn';
+    var assetCdn = 'jsdelivr';
 
     /**
      * Sets the path used to locate the iconic SVG files
@@ -69,9 +69,9 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@1.0.4/dist/icons/material-icons/';
+            return 'https://npmcdn.com/angular-icons@1.0.5/dist/icons/material-icons/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/1.0.4/icons/material-icons/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.5/icons/material-icons/';
           default:
             return assetPath;
         }
