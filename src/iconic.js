@@ -21,7 +21,7 @@
   function Iconic() {
     // default path
     var assetPath = '';
-    var assetCdn = 'jsdelivr';
+    var assetCdn = 'npmcdn';
 
     /**
      * Sets the path used to locate the iconic SVG files
