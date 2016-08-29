@@ -12,8 +12,8 @@
   function config($sceDelegateProvider) {
     var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
     $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
-      'https://npmcdn.com/angular-icons@1.0.5/dist/icons/iconic/**',
-      'https://cdn.jsdelivr.net/angular-icons/1.0.5/icons/iconic/**'
+      'https://npmcdn.com/angular-icons@1.0.6/dist/icons/iconic/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.6/icons/iconic/**'
     ]));
   }
 
@@ -21,7 +21,7 @@
   function Iconic() {
     // default path
     var assetPath = '';
-    var assetCdn = 'jsdelivr';
+    var assetCdn = 'npmcdn';
 
     /**
      * Sets the path used to locate the iconic SVG files
@@ -83,9 +83,9 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@1.0.5/dist/icons/iconic/';
+            return 'https://npmcdn.com/angular-icons@1.0.6/dist/icons/iconic/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/1.0.5/icons/iconic/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.6/icons/iconic/';
           default:
             return assetPath;
         }
