@@ -83,6 +83,7 @@ gulp.task('build', ['clean', 'setversion'], function() {
     // update CDNs
     .pipe($.replace(/https:\/\/cdn\.jsdelivr\.net\/angular-icons\/0\.0\.0/g, 'https://cdn.jsdelivr.net/angular-icons/' + nextVersion))
     .pipe($.replace(/https:\/\/npmcdn\.com\/angular-icons@0\.0\.0/g, 'https://npmcdn.com/angular-icons@' + nextVersion))
+    .pipe($.replace(/https:\/\/unpkg\.com\/angular-icons@0\.0\.0/g, 'https://unpkg.com/angular-icons@' + nextVersion))
     .pipe(gulp.dest('./dist')));
 
   return merged;
