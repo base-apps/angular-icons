@@ -12,8 +12,9 @@
   function config($sceDelegateProvider) {
     var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
     $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
-      'https://npmcdn.com/angular-icons@1.0.6/dist/icons/iconic/**',
-      'https://cdn.jsdelivr.net/angular-icons/1.0.6/icons/iconic/**'
+      'https://npmcdn.com/angular-icons@1.0.7/dist/icons/iconic/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.7/icons/iconic/**',
+      'https://unpkg.com/angular-icons@1.0.7/dist/icons/iconic/**'
     ]));
   }
 
@@ -21,7 +22,7 @@
   function Iconic() {
     // default path
     var assetPath = '';
-    var assetCdn = 'npmcdn';
+    var assetCdn = 'unpkg';
 
     /**
      * Sets the path used to locate the iconic SVG files
@@ -46,10 +47,11 @@
       switch (cdn) {
         case 'jsdelivr':
         case 'npmcdn':
+        case 'unpkg':
           assetCdn = cdn;
           break;
         default:
-          assetCdn = 'npmcdn';
+          assetCdn = 'unpkg';
           break;
       }
     };
@@ -82,10 +84,12 @@
        */
       function getAssetPath() {
         switch (assetCdn) {
+          case 'unpkg':
+            return 'https://unpkg.com/angular-icons@1.0.7/dist/icons/iconic/';
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@1.0.6/dist/icons/iconic/';
+            return 'https://npmcdn.com/angular-icons@1.0.7/dist/icons/iconic/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/1.0.6/icons/iconic/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.7/icons/iconic/';
           default:
             return assetPath;
         }
