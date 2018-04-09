@@ -12,9 +12,9 @@
   function config($sceDelegateProvider) {
     var whitelist = $sceDelegateProvider.resourceUrlWhitelist();
     $sceDelegateProvider.resourceUrlWhitelist(whitelist.concat([
-      'https://npmcdn.com/angular-icons@1.0.9/dist/icons/iconic/**',
-      'https://cdn.jsdelivr.net/angular-icons/1.0.9/icons/iconic/**',
-      'https://unpkg.com/angular-icons@1.0.9/dist/icons/iconic/**'
+      'https://npmcdn.com/angular-icons@1.0.10/dist/icons/iconic/**',
+      'https://cdn.jsdelivr.net/angular-icons/1.0.10/icons/iconic/**',
+      'https://unpkg.com/angular-icons@1.0.10/dist/icons/iconic/**'
     ]));
   }
 
@@ -85,11 +85,11 @@
       function getAssetPath() {
         switch (assetCdn) {
           case 'unpkg':
-            return 'https://unpkg.com/angular-icons@1.0.9/dist/icons/iconic/';
+            return 'https://unpkg.com/angular-icons@1.0.10/dist/icons/iconic/';
           case 'npmcdn':
-            return 'https://npmcdn.com/angular-icons@1.0.9/dist/icons/iconic/';
+            return 'https://npmcdn.com/angular-icons@1.0.10/dist/icons/iconic/';
           case 'jsdelivr':
-            return 'https://cdn.jsdelivr.net/angular-icons/1.0.9/icons/iconic/';
+            return 'https://cdn.jsdelivr.net/angular-icons/1.0.10/icons/iconic/';
           default:
             return assetPath;
         }
