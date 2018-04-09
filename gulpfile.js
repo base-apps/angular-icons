@@ -34,7 +34,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('setversion', function () {
-  return gulp.src('./package.json')
+  return gulp.src(['./package.json', './package-lock.json'])
     .pipe($.bump({type: args.publish || 'patch'}))
     .pipe($.tap(function(file){
       var json = JSON.parse(String(file.contents));
@@ -43,16 +43,16 @@ gulp.task('setversion', function () {
 });
 
 gulp.task('saveversion', function () {
-  return gulp.src('./package.json')
+  return gulp.src(['./package.json', './package-lock.json'])
     .pipe($.bump({type: args.publish || 'patch'}))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('tagversion', ['saveversion'], function () {
-  return gulp.src(['./package.json', './dist/**/*'])
+  return gulp.src(['./package.json', './package-lock.json', './dist/**/*'])
     .pipe($.git.add())
     .pipe($.git.commit('publish version ' + nextVersion))
-    .pipe($.filter('package.json'))
+    .pipe($.filter(['./package.json', './package-lock.json']))
     .pipe($.tagVersion());
 });
 
